@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-/* Assignmet Questions 1-
+/*Assignmet Questions 1-
 int main() {
     int x;
     int *ptr;
@@ -30,12 +30,10 @@ int main() {
 
 //------------------------------------------------------------------------------------------------------------------------
 
-/*
+
 int main() {
     int a = 10;
     int *ptr = &a; // Pointer to integer
-
-    int *ptr = NULL; // Pointer initialized to NULL , can't be dereferenced as it give segmentation fault  
 
     int**ptr2 = &ptr; // Pointer to pointer to integer
 
@@ -47,4 +45,3 @@ int main() {
      cout << "Value of ptr2: " <<ptr2 << " = " << &ptr << endl;
 
 }
-*/
