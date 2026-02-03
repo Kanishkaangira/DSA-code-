@@ -22,8 +22,20 @@ for (int i = 0; i < n; i++) {
 int main() {
     int arr[] = {4, 7, 8, 2, 3, 9, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    
-    int copyArr[n];
+   
+    // Reversing the array in place
+  int start =0;
+    int end = n-1;
+    while  (start <end ) {
+        swap(arr[start],arr[end]);
+        start++;
+        end--;
+    }
+
+
+
+    // Reversing the array using a temporary array but it incereases space complexity
+/*  int copyArr[n];
     for (int i = 0; i < n; i++) {
         copyArr[n - i - 1] = arr[i];
     }
@@ -31,8 +43,10 @@ int main() {
     for (int i = 0; i < n; i++) {
         arr[i] = copyArr[i];
     }
+*/  
 
-    PrintReverse(arr, n);
+
+    //PrintReverse(arr, n) ;
     //LinearSearch(arr, n ,10);
 
 
