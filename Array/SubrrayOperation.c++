@@ -133,20 +133,28 @@ void trapRainWater(int *height, int n3) {
 
 
 // LeetCode 153. Maximum Subarray 
-void maxSubarrayProduct (int*arr , int n4 ) {
-    int maxSubarrayProduct = INT8_MIN;
+void maxProductSubarray(int arr[], int n) {
+    int maxProd = arr[0];   // maximum product ending here
+    int minProd = arr[0];   // minimum product ending here
+    int answer = arr[0];    // overall maximum product
 
-//Product only of continous subarray   
-    for (int i = 0; i< n4; i++) {
-        int currentProduct = 1;
-        currentProduct *= arr[i];
-        int maxProduct = arr[i]*arr[i+1];
-        maxProduct = max(maxProduct, currentProduct);
-        maxSubarrayProduct = max(maxSubarrayProduct, maxProduct);
+    for (int i = 1; i < n; i++) {
+
+        // If current element is negative, swap max & min
+        if (arr[i] < 0) {
+            swap(maxProd, minProd);
         }
-        cout << "Maximum Subarray Product is: " << maxSubarrayProduct << endl;
-}
 
+        // Update max and min product ending at index i
+        maxProd = max(arr[i], maxProd * arr[i]);
+        minProd = min(arr[i], minProd * arr[i]);
+
+        // Update final answer
+        answer = max(answer, maxProd);
+    }
+
+    cout << "Maximum Product Subarray = " << answer << endl;
+}
 
 int main() {
     int arr[]= {2, -3, 6, -5, 4, 2};  // 
@@ -167,7 +175,7 @@ int main() {
     //maxSubarraySum3(arr, n);  // Time Complexity: O(n)
     //maxprofit(prices, n2);  // Time Complexity: O(n)
     //trapRainWater(height, n3);  // Time Complexity: O(n) 
-    maxSubarrayProduct(nums, n4);  // Time Complexity: O(n)  
+    maxProductSubarray(nums, n4);  // Time Complexity: O(n)  
 
     return 0;
 }
