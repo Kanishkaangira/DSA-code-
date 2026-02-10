@@ -76,7 +76,7 @@ void diagonalSum(int mat[][3], int n) {
 } 
 
 
-// LeetCode 240. Search a 2D Matrix II
+// LeetCode 240. Search a 2D Matrix II  (using staircase search algorithm)
 void search2DMatrix(int matrix[][4], int m, int n , int key) {
     int row =0;
     int col = n - 1;
