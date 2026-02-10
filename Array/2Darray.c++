@@ -76,6 +76,23 @@ void diagonalSum(int mat[][3], int n) {
 } 
 
 
+// LeetCode 240. Search a 2D Matrix II
+void search2DMatrix(int matrix[][4], int m, int n , int key) {
+    int row =0;
+    int col = n - 1;
+    while (row < m && col >= 0) {
+        if (matrix[row][col] == key) {
+            cout << "Element found at position: (" << row << ", " << col << ")" << endl;
+            return;
+        } else if (matrix[row][col] > key) {
+            col--; // Move left 
+        } else {
+            row++; // Move down 
+}
+}
+}
+
+
 int main() {
     int matrix[1][3];
     int m= 1, n= 3;
@@ -85,11 +102,19 @@ int main() {
         {4, 5, 6},
         {7, 8, 9}
     };
+
+    int matrix2[4][4] = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9, 10, 11, 12},
+        {13,14, 15, 16}
+    };
     
     // Accessing elements in a 2D array
     //cout << "Element at row 1, column 2: " << arr[0][1] << endl; // Output: 2
 
     //traversingSpiralMatrix(matrix, m, n); // Time Complexity: O(m*n) and Space Complexity: O(1)
-    diagonalSum(matrix1, n); // Time Complexity: O(n) and Space Complexity: O(1)
+    //diagonalSum(matrix1, n); // Time Complexity: O(n) and Space Complexity: O(1)
+    search2DMatrix(matrix2, 4, 4, 15); // Time Complexity: O(m+n) and Space Complexity: O(1)
     return 0;
 }
