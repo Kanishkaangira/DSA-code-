@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-//Linear Search in an Array
+//Linear Search in an Array 
 void LinearSearch(int arr[], int n, int key) {
     for (int i = 0; i < n; i++) {
         if (arr[i] == key) {

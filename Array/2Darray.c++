@@ -73,7 +73,7 @@ void diagonalSum(int mat[][3], int n) {
         }
     }
     cout << "Diagonal Sum: " << sum << endl;
-} 
+}  
 
 
 // LeetCode 240. Search a 2D Matrix II  (using staircase search algorithm)
@@ -91,7 +91,27 @@ void search2DMatrix(int matrix[][4], int m, int n , int key) {
 }
 }
 }
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+        int row = 0;
+        int col = n-1;
 
+        while (row<m && col<n) {
+            if (matrix[row][col] == target) {
+            return true;
+        } else if (matrix[row][col] > target) {
+            col--; // Move left 
+        } else {
+            row++; // Move down 
+}
+}
+        }
+    return false;
+    }
+};
 
 int main() {
     int matrix[1][3];
