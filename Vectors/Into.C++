@@ -13,7 +13,7 @@ vector<int> twoSum(vector<int>& numb, int target) {
 
         if (currSum == target) { 
             cout << start+1 << "," << end+1 << endl; 
-            return {start + 1, end + 1};
+            return {start + 1, end + 1};                    // Return 1-based indices
         } else if (currSum < target) { 
             start++; 
         } else { 
