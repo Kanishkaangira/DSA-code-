@@ -1,5 +1,26 @@
 #include <iostream>
+#include <vector>
 using namespace std;
+
+// Leetcode 2527. Find Xor-Beauty of an Array        //Time Complexity: O(n), Space Complexity: O(1)
+int xorBeauty(vector<int>& nums) {
+    int xorSum = 0;
+    for (int num : nums) {
+        xorSum ^= num;
+    }
+    return xorSum;
+}
+
+
+// LeetCode 136. Single Number                         //Time Complexity: O(n), Space Complexity: O(1)
+int singleNumber(vector<int>& nums) {
+    int sum = 0;
+    for ( int i = 0 ; i <nums.size(); i++) {
+        sum ^= nums[i];
+    }
+    return sum;
+};
+
 
 //Fast Exponention 
 int fastExponention(int a, int b) {
@@ -68,7 +89,7 @@ void oddEven(int n) {
 }
 
 int main() {
-    int a = 3, b = 5;
+    int nums[5] = {4, 1, 2, 1, 2};
 
     //Bitwise And(&) Opertor
     //cout << (3 & 5) << endl;
@@ -92,8 +113,9 @@ int main() {
     //cout <<getBit(7, 5) << endl;
     
     //clearBit(a, b);
-    cout << fastExponention(a, b);
+   // cout << fastExponention(a, b);
     
+   cout << singleNumber(nums);
 
     return 0;
 }
