@@ -17,7 +17,6 @@ void RemoveDuplicates(string str, string ans, int i, int map[26]) {
         map[mapIdx] = true;
         RemoveDuplicates(str, ans+str[i], i + 1, map);
     }
-    
 }
 
 //LeetCode Tiling Problem 
@@ -29,7 +28,7 @@ int tilingProblem(int n)  {
 }
 
 int main() {
-    string str = "geeksforgeeks"; // Input string
+    string str = "Kanishka"; // Input string
     string ans = ""; // Output string
     int map[26] = {false};
     // int n;
