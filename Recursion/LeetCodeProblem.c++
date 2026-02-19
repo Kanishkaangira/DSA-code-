@@ -1,6 +1,15 @@
 #include <iostream>
 using namespace std;
 
+// Friend Pair Problem
+int friendPair(int n) {
+    if (n == 1 || n == 2) {
+        return n;
+    }
+    return friendPair(n - 1) + friendPair(n - 2) * (n - 1);
+}
+
+/*
 //Remove Duplicates from string
 void RemoveDuplicates(string str, string ans, int i, int map[26]) {
     if (i == str.length()) {
@@ -18,6 +27,7 @@ void RemoveDuplicates(string str, string ans, int i, int map[26]) {
         RemoveDuplicates(str, ans+str[i], i + 1, map);
     }
 }
+*/
 
 //LeetCode Tiling Problem 
 int tilingProblem(int n)  {
@@ -28,15 +38,18 @@ int tilingProblem(int n)  {
 }
 
 int main() {
-    string str = "Kanishka"; // Input string
-    string ans = ""; // Output string
-    int map[26] = {false};
-    // int n;
+    // string str = "Kanishka"; // Input string
+    // string ans = ""; // Output string
+    // int map[26] = {false};
+   
+    //int n;
     // cin >> n;
     // int m;
     // cin >> m;
     // cout << tilingProblem(n,m) << endl; 
 
-    RemoveDuplicates(str, ans, 0, map);
+    //RemoveDuplicates(str, ans, 0, map);
+    //cout<< friendPair(3) << endl;
+    cout<< "kanu" << endl;
     return 0;
 }
